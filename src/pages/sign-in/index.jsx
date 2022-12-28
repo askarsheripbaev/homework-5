@@ -1,21 +1,41 @@
-import React from 'react';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
-
-const Signin = () => {
+export default function Signin() {
     return (
-        <div>
-            <form>
-                <div className="row">
-                    <div className="col">
-                        <input type="text" className="form-control" placeholder="First name"/>
-                    </div>
-                    <div className="col">
-                        <input type="text" className="form-control" placeholder="Last name"/>
-                    </div>
-                </div>
-            </form>
-        </div>
+        <Box
+            component="form"
+            sx={{
+                '& .MuiTextField-root': { m: 1, width: '25ch' },
+            }}
+            noValidate
+            autoComplete="off"
+        >
+            <div>
+                <TextField
+                    Login
+                    id="filled-required"
+                    label="Login"
+                    variant="filled"
+                />
+                <TextField
+                    id="filled-password-input"
+                    label="Password"
+                    type="password"
+                    autoComplete="current-password"
+                    variant="filled"
+                />
+                <TextField
+                    id="filled-number"
+                    label="Number"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    variant="filled"
+                />
+            </div>
+        </Box>
     );
-};
-
-export default Signin;
+}
